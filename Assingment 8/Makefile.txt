@@ -1,0 +1,26 @@
+CC = g++
+CFLAGS = -Wall
+
+all: BucketAndCountSort RadixSort StringSort
+	./BucketAndCountSort RadixSort StringSort
+
+BucketAndCountSort: BucketAndCountSort.o
+	$(CC) $(CFLAGS) -o BucketAndCountSort BucketAndCountSort.o
+
+BucketAndCountSort.o: BucketAndCountSort.cpp 
+	$(CC) $(CFLAGS) -c BucketAndCountSort.cpp
+
+RadixSort: RadixSort.o
+	$(CC) $(CFLAGS) -o RadixSort RadixSort.o
+
+RadixSort.o: RadixSort.cpp 
+	$(CC) $(CFLAGS) -c RadixSort.cpp
+
+StringSort: StringSort.o
+	$(CC) $(CFLAGS) -o StringSort StringSort.o
+
+StringSort.o: StringSort.cpp 
+	$(CC) $(CFLAGS) -c StringSort.cpp
+
+clean:
+	rm -f *.o BucketAndCountSort RadixSort StringSort
