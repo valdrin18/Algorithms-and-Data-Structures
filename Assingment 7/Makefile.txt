@@ -1,0 +1,20 @@
+CC = g++
+CFLAGS = -Wall
+
+all: QuickSort QuickSortModified
+	./QuickSort QuickSortModified
+
+QuickSort: QuickSort.o
+	$(CC) $(CFLAGS) -o QuickSort QuickSort.o
+
+QuickSort.o: QuickSort.cpp 
+	$(CC) $(CFLAGS) -c QuickSort.cpp
+
+QuickSortModified: QuickSortModified.o
+	$(CC) $(CFLAGS) -o QuickSortModified QuickSortModified.o
+
+QuickSortModified.o: QuickSortModified.cpp 
+	$(CC) $(CFLAGS) -c QuickSortModified.cpp
+
+clean:
+	rm -f *.o QuickSort QuickSortModified 
