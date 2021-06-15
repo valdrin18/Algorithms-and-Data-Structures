@@ -1,0 +1,19 @@
+GCC = g++
+CFLAGS = -Wall
+OBJ = HashTable.o
+
+all: HashTable Greedy
+	./HashTable Greedy
+
+HashTable: $(OBJ)
+	$(GCC) $(CFLAGS) -o HashTable $(OBJ)
+
+HashTable.o: HashTable.cpp  
+
+Greedy: $(OBJ)
+	$(GCC) $(CFLAGS) -o Greedy $(OBJ)
+
+Greedy.o: Greedy.cpp  
+
+clean: 
+	rm -f HashTable *.o Greedy *.o
