@@ -1,0 +1,26 @@
+CC = g++
+CFLAGS = -Wall
+
+all: ListToTree TreeToList StackAndQueue
+	./ListToTree TreeToList StackAndQueue
+
+ListToTree: ListToTree.o
+	$(CC) $(CFLAGS) -o ListToTree ListToTree.o
+
+ListToTree.o: ListToTree.cpp 
+	$(CC) $(CFLAGS) -c ListToTree.cpp
+
+StackAndQueue: StackAndQueue.o
+	$(CC) $(CFLAGS) -o StackAndQueue StackAndQueue.o
+
+StackAndQueue.o: StackAndQueue.cpp 
+	$(CC) $(CFLAGS) -c StackAndQueue.cpp
+
+TreeToList: TreeToList.o
+	$(CC) $(CFLAGS) -o TreeToList TreeToList.o
+
+TreeToList.o: TreeToList.cpp 
+	$(CC) $(CFLAGS) -c TreeToList.cpp
+
+clean:
+	rm -f *.o ListToTree TreeToList StackAndQueue
