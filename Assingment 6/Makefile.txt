@@ -1,0 +1,14 @@
+CC = g++
+CFLAGS = -Wall
+
+all: HeapSort
+	./HeapSort
+
+heapSort: HeapSort.o
+	$(CC) $(CFLAGS) -o HeapSort  heapSort.o
+
+heapSort.o: HeapSort.cpp 
+	$(CC) $(CFLAGS) -c HeapSort.cpp
+
+clean:
+	rm -f *.o HeapSort
