@@ -1,0 +1,19 @@
+GCC = g++
+CFLAGS = -Wall
+OBJ = HashTable.o
+
+all: LongestSubArray SumInTriangles
+	./LongestSubArray  SumInTriangles
+
+LongestSubArray: $(OBJ)
+	$(GCC) $(CFLAGS) -o LongestSubArray  $(OBJ)
+
+LongestSubArray.o: LongestSubArray .cpp  
+
+SumInTriangles: $(OBJ)
+	$(GCC) $(CFLAGS) -o SumInTriangles $(OBJ)
+
+SumInTriangles.o: SumInTriangles.cpp  
+
+clean: 
+	rm -f LongestSubArray *.o SumInTriangles *.o
